@@ -16,7 +16,7 @@ function App() {
 
   const fetchMenuItems = async () => {
     try {
-      const response = await fetch("http://localhost:3001/menuItems")
+      const response = await fetch("https://full-stack-application-slar.onrender.com/menuItems")
       const data = await response.json()
       setMenuItems(data)
       setLoading(false)
@@ -28,7 +28,7 @@ function App() {
 
   const addMenuItem = async (newItem) => {
     try {
-      const response = await fetch("http://localhost:3001/menuItems", {
+      const response = await fetch("https://full-stack-application-slar.onrender.com/menuItems", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +45,7 @@ function App() {
 
   const updateMenuItem = async (id, updatedItem) => {
     try {
-      const response = await fetch(`http://localhost:3001/menuItems/${id}`, {
+      const response = await fetch(`https://full-stack-application-slar.onrender.com/menuItems/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -62,7 +62,7 @@ function App() {
 
   const deleteMenuItem = async (id) => {
     try {
-      await fetch(`http://localhost:3001/menuItems/${id}`, {
+      await fetch(`https://full-stack-application-slar.onrender.com/menuItems/${id}`, {
         method: "DELETE",
       })
       setMenuItems(menuItems.filter((item) => item.id !== id))
